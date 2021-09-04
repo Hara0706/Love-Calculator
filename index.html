@@ -61,9 +61,23 @@
     <script>
         function checklove()
         {
-            var lovedata = Math.random()*100;
-            lovedata = Math.floor(lovedata);
-            document.getElementById('lovevalue').value = lovedata;
+            var mname = document.getElementById('mname').value;
+            var lname = document.getElementById('lname').value;
+            
+            if(mname == "") {alert('Please enter your name first');}
+            else if(mname.length < 2) {alert('Minimum length is 2');}
+            else if(!isNaN(mname)) {alert('Numbers are not allowed');}
+
+            else if(lname == "") {alert('Please enter love name first');}
+            else if(lname.length < 2) {alert('Minimum length is 2');}
+            else if(!isNaN(lname)) {alert('Numbers are not allowed');}
+
+            else 
+            {
+                var lovedata = Math.random()*100;
+                lovedata = Math.floor(lovedata);
+                document.getElementById('lovevalue').value = lovedata + "%";
+            }
         }
     </script>
 </body>
